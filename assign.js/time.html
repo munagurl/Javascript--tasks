@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let time;
+        time=(prompt("Enter the hour"));
+
+        var b = time.split(' ');
+        var b = time.split(' ');
+
+        if(b[1] == "PM"){
+            c = 12
+        }else {
+          c = 0 
+        }
+
+        var a = b[0].split(':'); // split it at the colons
+
+        if(a[1] == undefined){
+            a[1] = 0
+        }
+
+        if(a[2] == undefined){
+            a[2] = 0
+        }
+        // minutes are worth 60 seconds. Hours are worth 60 minutes.
+        var seconds = (+a[0] + c) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
+        if(seconds< 43200){
+            console.log("Good Morning");
+        }else if (seconds>=43200 && seconds<=61200){
+            console.log("Good Afternoon");
+        }else if (seconds>61200){
+            console.log("Good Evening");
+        }
+    </script>
+
+    <script>
+
+    </script>
+</body>
+</html>

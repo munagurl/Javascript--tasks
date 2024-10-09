@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Traffic Light Checker</h2>
+        <input type="text" id="colorInput" placeholder="Enter displayed color" />
+        <button onclick="checkLightColor()">Check</button>
+        <p id="result"></p>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+
+    <script>
+           function checkLightColor() {
+            // Get the input value
+            const color = document.getElementById("colorInput").value.toLowerCase();
+
+            
+
+            let result;
+
+            // Check if the day is a weekday
+            if (color=="red") {
+                result = "stop";
+            }
+            // Check if the day is a weekend
+            else if (color=="yellow") {
+                result = "proceed with caution";
+            }else if (color=="green") {
+                result = "Go";
+            // Handle invalid input
+            }else {
+                result = "Invalid color";
+            }
+
+            // Display the result
+            document.getElementById("result").innerText = result;
+        }
+        
+    </script>
+</body>
+</html>

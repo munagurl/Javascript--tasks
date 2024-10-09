@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Day of the Week Checker</h2>
+        <input type="text" id="dayInput" placeholder="Enter a day of the week" />
+        <button onclick="checkDayOfWeek()">Check</button>
+        <p id="result"></p>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+
+    <script>
+           function checkDayOfWeek() {
+            // Get the input value
+            const day = document.getElementById("dayInput").value.toLowerCase();
+
+            // Define arrays for weekdays and weekends
+            const weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday"];
+            const weekends = ["saturday", "sunday"];
+
+            let result;
+
+            // Check if the day is a weekday
+            if (weekdays.includes(day)) {
+                result = "Weekday";
+            }
+            // Check if the day is a weekend
+            else if (weekends.includes(day)) {
+                result = "Weekend";
+            }
+            // Handle invalid input
+            else {
+                result = "Invalid day";
+            }
+
+            // Display the result
+            document.getElementById("result").innerText = result;
+        }
+        
+    </script>
+</body>
+</html>
